@@ -7,10 +7,10 @@ document
 .querySelector("#companySearch")
 .addEventListener("keypress", keyPressEvent => {
     if (keyPressEvent.charCode === 13) {
- 
-       const searchEntry = keyPressEvent.target.value
+        
+       const searchEntry = keyPressEvent.target.value.toLowerCase()
 
-       const foundBusiness = allBusinesses.find(business => business.companyName.includes(searchEntry))
+       const foundBusiness = allBusinesses.find(business => business.companyName.toLowerCase().includes(searchEntry))
        
        companySearchResultArticle.innerHTML = `
        <h2>
