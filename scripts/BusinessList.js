@@ -7,7 +7,7 @@ document
 .querySelector("#companySearch")
 .addEventListener("keypress", keyPressEvent => {
     if (keyPressEvent.charCode === 13) {
-        
+          
        const searchEntry = keyPressEvent.target.value.toLowerCase()
 
        const foundBusiness = allBusinesses.find(business => business.companyName.toLowerCase().includes(searchEntry))
@@ -34,7 +34,7 @@ const allBusinesses = getBusinesses()
 export const BusinessList = () => {
     const contentTarget = document.querySelector(".businessList--allBusinesses")
     contentTarget.innerHTML = "<h1>Active Businesses</h1>"
-    
+
     allBusinesses.forEach(
         (businessObject) => {
             contentTarget.innerHTML += Business(businessObject)

@@ -138,15 +138,8 @@ export const getManufacturing = () => {
 }
 
 
-const getAgents = () => {
-    const agents = businesses.map(businessObject => {
-        return businessObject.purchasingAgent
-    })
-    return agents
-}
-
-export const AgentData = () => {
-    const agents = getAgents()
+export const getAgents = () => {
+    const agents = businesses.map(businessObject => businessObject.purchasingAgent)
     const newAgentArray = []
     businesses.forEach((business) => {
         const businessAgent = agents.find(agent => agent === business.purchasingAgent)
@@ -158,3 +151,4 @@ export const AgentData = () => {
     })
     return newAgentArray
 }
+
